@@ -1,0 +1,130 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\C#\\Learn-C#\\Day1\\Day1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A7D3023C-3825-4DCD-B779-5799ADA2CD3C}|Day1\\Day1.csproj|c:\\c#\\learn-c#\\day1\\day1\\day1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7D3023C-3825-4DCD-B779-5799ADA2CD3C}|Day1\\Day1.csproj|solutionrelative:day1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7D3023C-3825-4DCD-B779-5799ADA2CD3C}|Day1\\Day1.csproj|c:\\c#\\learn-c#\\day1\\day1\\day1\\exercise.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7D3023C-3825-4DCD-B779-5799ADA2CD3C}|Day1\\Day1.csproj|solutionrelative:day1\\exercise.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7D3023C-3825-4DCD-B779-5799ADA2CD3C}|Day1\\Day1.csproj|c:\\c#\\learn-c#\\day1\\day1\\day1\\example.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7D3023C-3825-4DCD-B779-5799ADA2CD3C}|Day1\\Day1.csproj|solutionrelative:day1\\example.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7D3023C-3825-4DCD-B779-5799ADA2CD3C}|Day1\\Day1.csproj|c:\\c#\\learn-c#\\day1\\day1\\day1\\exercise2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7D3023C-3825-4DCD-B779-5799ADA2CD3C}|Day1\\Day1.csproj|solutionrelative:day1\\exercise2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7D3023C-3825-4DCD-B779-5799ADA2CD3C}|Day1\\Day1.csproj|c:\\c#\\learn-c#\\day1\\day1\\day1\\distanceconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7D3023C-3825-4DCD-B779-5799ADA2CD3C}|Day1\\Day1.csproj|solutionrelative:day1\\distanceconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7D3023C-3825-4DCD-B779-5799ADA2CD3C}|Day1\\Day1.csproj|c:\\c#\\learn-c#\\day1\\day1\\day1\\temperatureconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7D3023C-3825-4DCD-B779-5799ADA2CD3C}|Day1\\Day1.csproj|solutionrelative:day1\\temperatureconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{269a02dc-6af8-11d3-bdc4-00c04f688e50}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DistanceConverter.cs",
+              "DocumentMoniker": "C:\\C#\\Learn-C#\\Day1\\Day1\\Day1\\DistanceConverter.cs",
+              "RelativeDocumentMoniker": "Day1\\DistanceConverter.cs",
+              "ToolTip": "C:\\C#\\Learn-C#\\Day1\\Day1\\Day1\\DistanceConverter.cs",
+              "RelativeToolTip": "Day1\\DistanceConverter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-17T20:42:55.963Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TemperatureConverter.cs",
+              "DocumentMoniker": "C:\\C#\\Learn-C#\\Day1\\Day1\\Day1\\TemperatureConverter.cs",
+              "RelativeDocumentMoniker": "Day1\\TemperatureConverter.cs",
+              "ToolTip": "C:\\C#\\Learn-C#\\Day1\\Day1\\Day1\\TemperatureConverter.cs",
+              "RelativeToolTip": "Day1\\TemperatureConverter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-17T20:40:20.164Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Example.cs",
+              "DocumentMoniker": "C:\\C#\\Learn-C#\\Day1\\Day1\\Day1\\Example.cs",
+              "RelativeDocumentMoniker": "Day1\\Example.cs",
+              "ToolTip": "C:\\C#\\Learn-C#\\Day1\\Day1\\Day1\\Example.cs",
+              "RelativeToolTip": "Day1\\Example.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-17T20:09:32.605Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Exercise2.cs",
+              "DocumentMoniker": "C:\\C#\\Learn-C#\\Day1\\Day1\\Day1\\Exercise2.cs",
+              "RelativeDocumentMoniker": "Day1\\Exercise2.cs",
+              "ToolTip": "C:\\C#\\Learn-C#\\Day1\\Day1\\Day1\\Exercise2.cs",
+              "RelativeToolTip": "Day1\\Exercise2.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-17T19:46:29.695Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Exercise.cs",
+              "DocumentMoniker": "C:\\C#\\Learn-C#\\Day1\\Day1\\Day1\\Exercise.cs",
+              "RelativeDocumentMoniker": "Day1\\Exercise.cs",
+              "ToolTip": "C:\\C#\\Learn-C#\\Day1\\Day1\\Day1\\Exercise.cs",
+              "RelativeToolTip": "Day1\\Exercise.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-17T19:10:29.449Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\C#\\Learn-C#\\Day1\\Day1\\Day1\\Program.cs",
+              "RelativeDocumentMoniker": "Day1\\Program.cs",
+              "ToolTip": "C:\\C#\\Learn-C#\\Day1\\Day1\\Day1\\Program.cs*",
+              "RelativeToolTip": "Day1\\Program.cs*",
+              "ViewState": "AgIAAHEBAAAAAAAAAAAkwIwBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-17T18:58:14.373Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
