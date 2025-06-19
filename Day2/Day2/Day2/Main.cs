@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 
@@ -9,6 +10,7 @@ namespace Day2
     public partial class Main : Form
     {
 
+        //private delegate void DisplayMessage(string message);
 
       
 
@@ -21,10 +23,46 @@ namespace Day2
             RefreshDiary();
             SetColumnsHeader();
 
+
+
+
+
+
+
+            //var messages = new DisplayMessage(DisplayMessage1);
+            //var messages = new Action<string>(DisplayMessage2);
+            //messages += DisplayMessage1;
+            //messages("test");
+
+            //Func
+            //Action 
+
+            //composition - example
+            //var student = new Student();
+            //student.address.City = "1";
+
+            //try
+            // {
+            //     var student = new Student();
+            //     student.MyProperty = "1";
+            //     MessageBox.Show(student.MyProperty);
+            // }
+            // catch(Exception ex)
+            // {
+            //     MessageBox.Show(ex.Message);
+            // }
+
         }
 
-   
-       private void SetColumnsHeader()
+        public void DisplayMessage1(string message)
+        {
+            MessageBox.Show($"Method 1 - {message}");
+        }
+        public void DisplayMessage2(string message)
+        {
+            MessageBox.Show($"Method 2 - {message}");
+        }
+        private void SetColumnsHeader()
         {
             dgvDiary.Columns[0].HeaderText = "ID";
             dgvDiary.Columns[1].HeaderText = "First Name";
@@ -47,8 +85,23 @@ namespace Day2
         private void btnAdd_Click(object sender, EventArgs e)
         {
             var addEditStudent = new AddEditStudentView();
+            addEditStudent.FormClosing += AddEditStudent_FormClosing;
             addEditStudent.ShowDialog();
+            //Events 
+            //addEditStudent.StudentAdded += AddEditStudent_StudentAdded;
+            //addEditStudent.ShowDialog();
+            //addEditStudent.StudentAdded -= AddEditStudent_StudentAdded;
         }
+
+        private void AddEditStudent_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            RefreshDiary();
+        }
+
+        //private void AddEditStudent_StudentAdded()
+        //{
+        //    RefreshDiary();
+        //}
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
@@ -59,6 +112,7 @@ namespace Day2
             }
 
             var addEditStudent = new AddEditStudentView(Convert.ToInt32(dgvDiary.SelectedRows[0].Cells[0].Value));
+            addEditStudent.FormClosing += AddEditStudent_FormClosing;
             addEditStudent.ShowDialog();
         }
 

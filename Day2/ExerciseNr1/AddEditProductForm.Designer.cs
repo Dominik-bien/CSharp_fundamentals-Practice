@@ -55,6 +55,7 @@
             // 
             this.tbId.Location = new System.Drawing.Point(101, 42);
             this.tbId.Name = "tbId";
+            this.tbId.ReadOnly = true;
             this.tbId.Size = new System.Drawing.Size(207, 20);
             this.tbId.TabIndex = 1;
             // 
@@ -163,7 +164,7 @@
             this.MinimumSize = new System.Drawing.Size(373, 325);
             this.Name = "AddEditProductForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AddEditProductForm";
+            this.Text = "Add Product";
             this.ResumeLayout(false);
             this.PerformLayout();
 

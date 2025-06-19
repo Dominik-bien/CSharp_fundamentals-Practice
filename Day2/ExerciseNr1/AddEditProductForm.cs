@@ -34,9 +34,9 @@ namespace ExerciseNr1
             {
                 Text = "Edit Product";
                 var products = _fileHelper.DeserializeFromFile();
-                var product = products.FirstOrDefault(x => x.Id == _productId);
+                _product = products.FirstOrDefault(x => x.Id == _productId);
 
-                if (product == null)
+                if (_product == null)
                     throw new Exception("no product with specified ID");
 
                 fillTextboxes();

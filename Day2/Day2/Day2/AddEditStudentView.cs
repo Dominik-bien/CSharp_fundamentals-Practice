@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Serialization;
@@ -14,13 +15,14 @@ namespace Day2
 {
     public partial class AddEditStudentView : Form
     {
-
-      
+        //Events and delegate 
+        //public delegate void MySimpleDelegate();
+        //public event MySimpleDelegate StudentAdded;
 
         private FileHelper<List<Student>> _fileHelper = new FileHelper<List<Student>>(Program.FilePath);
-
         private int _studentID;
         private Student _student; 
+
         public AddEditStudentView(int id = 0)
         {
             InitializeComponent();
@@ -31,8 +33,12 @@ namespace Day2
             tbFirstName.Select();
 
         }
+        //private void OnStudentAdded()
+        //{
+        //    StudentAdded?.Invoke();
+        //}
 
-        private void btnApply_Click(object sender, EventArgs e)
+        private async void btnApply_Click(object sender, EventArgs e)
         {
             var students = _fileHelper.DeserializeFromFile();
 
@@ -44,7 +50,16 @@ namespace Day2
            AddNewUserToList(students);
 
             _fileHelper.SerializeToFile(students);
+            await LongProcess();
+            //OnStudentAdded();
             Close();
+        }
+        private async Task LongProcess()
+        {
+           await Task.Run(() =>
+            {
+                Thread.Sleep(3000);
+            });
         }
 
         private void AddNewUserToList(List<Student> students)
@@ -81,9 +96,9 @@ namespace Day2
             {
                 Text = "Edit Student";
                 var students = _fileHelper.DeserializeFromFile();
-                var student = students.FirstOrDefault(x => x.Id == _studentID);
+                _student = students.FirstOrDefault(x => x.Id == _studentID);
 
-                if (student == null)
+                if (_student == null)
                     throw new Exception("no student with the specified ID");
 
                 fillTextBoxes();
