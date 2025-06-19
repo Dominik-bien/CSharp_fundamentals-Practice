@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -306,96 +307,147 @@ namespace Day1
             //Exercise 5 - Finish Tomorrow
 
 
-            //var random = new Random();
-            //var guessHistory = new List<int>();
-            //bool isGameRunning = true;
+            var random = new Random();
+            var guessHistory = new List<int>();
+            bool isGameRunning = true;
 
-            //while (isGameRunning)
-            //{
-            //    Console.Clear();
-            //    Console.WriteLine("Welcome to game: Guess The number");
-            //    Console.WriteLine("1 - New Game\n2 - Show history game\n3 - Exit the game");
+            while (isGameRunning)
+            {
+                // Clear the console at the start of the loop for a better user experience
+                Console.Clear();
+                Console.WriteLine("Welcome to game: Guess The number");
+                Console.WriteLine("1 - New Game\n2 - Show history game\n3 - Exit the game");
+
+                int choice = 0; // It's good practice to declare the variable closer to where it's used.
+
+                try
+                {
+                    // We try to parse the input.
+                    choice = int.Parse(Console.ReadLine());
+                }
+                catch (FormatException) // You don't need the 'ex' variable if you don't use it.
+                {
+                    Console.WriteLine("Error. Value is not a number. Please choose: 1, 2 or 3");
+                    Console.WriteLine("Press any key to continue...");
+                    Console.ReadKey();
+                    continue; // FIX #1: Skip the switch statement and restart the loop.
+                }
+                catch (OverflowException)
+                {
+                    Console.WriteLine("Your number is too large. Please enter a value between 1-3");
+                    Console.WriteLine("Press any key to continue...");
+                    Console.ReadKey();
+                    continue; // FIX #1: Skip the switch statement and restart the loop.
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Unexpected error: {ex.Message}");
+                    Console.WriteLine("Press any key to continue...");
+                    Console.ReadKey();
+                    continue; // FIX #1: Skip the switch statement and restart the loop.
+                }
+
+                switch (choice)
+                {
+                    case 1:
+                        Console.Clear();
+                        int numberToGuess = random.Next(1, 101);
+                        int attempts = 0;
+                        bool guessedCorrectly = false;
+
+                        for (int i = 7; i > 0; i--)
+                        {
+                            int userGuess = 0;
+                            try
+                            {
+                                Console.WriteLine($"Enter your guess. You have {i} attempt(s) left.");
+                                userGuess = int.Parse(Console.ReadLine());
+                            }
+                            catch (FormatException)
+                            {
+                                Console.WriteLine("Invalid format. Please enter a whole number.");
+                                i++; 
+                                Console.WriteLine("Press any key to try again...");
+                                Console.ReadKey();
+                                Console.Clear();
+                                continue;
+                            }
+                            catch (OverflowException)
+                            {
+                                Console.WriteLine("Your number is too big or small. Please enter a value between 1-100.");
+                                i++; 
+                                Console.WriteLine("Press any key to try again...");
+                                Console.ReadKey();
+                                Console.Clear();
+                                continue;
+                            }
+
+                  
+                            attempts++;
+                            if (userGuess > numberToGuess)
+                            {
+                                Console.WriteLine("Too high");
+                            }
+                            else if (userGuess < numberToGuess)
+                            {
+                                Console.WriteLine("Too low");
+                            }
+                            else
+                            {
+                                Console.WriteLine($"Congratulations! You guessed it :D");
+                                Console.WriteLine($"The number was: {numberToGuess}");
+                                Console.WriteLine($"It took you {attempts} attempts in this round.");
+                                guessedCorrectly = true;
+                                break;
+                            }
+                        }
+
+                        if (!guessedCorrectly)
+                        {
+                            Console.WriteLine($"You ran out of attempts. You lose.");
+                            Console.WriteLine($"The correct number was: {numberToGuess}");
+                        }
+
+                        guessHistory.Add(attempts);
+                        Console.WriteLine("Press any key to return to the main menu...");
+                        Console.ReadKey();
+                        break;
+
+                    case 2:
+                        Console.Clear();
+                        if (guessHistory.Count == 0)
+                        {
+                            Console.WriteLine("No game history yet. Play a game first!");
+                        }
+                        else
+                        {
+                            Console.WriteLine("--- Game History (Attempts per game) ---");
+                            for (int gameNumber = 0; gameNumber < guessHistory.Count; gameNumber++)
+                            {
+                                Console.WriteLine($"Game {gameNumber + 1}: {guessHistory[gameNumber]} attempts");
+                            }
+                        }
+                        Console.WriteLine("\nPress any key to return to the main menu...");
+                        Console.ReadKey();
+                        break;
+
+                    case 3:
+                        Console.WriteLine("Thanks for playing this game :)");
+                        isGameRunning = false;
+                        break;
+
+                    default:
+                        Console.WriteLine("Unknown option. Please choose 1, 2, or 3.");
+                        Console.WriteLine("Press any key to continue...");
+                        Console.ReadKey();
+                        break;
+                }
+            }
 
 
-            //    try
-            //    {
-            //        var choise = 0;
-            //        choise = int.Parse(Console.ReadLine());
-            //    }
-            //    catch (FormatException ex)
-            //    {
-
-            //        Console.WriteLine("Error!: The entered value is not a number. Please enter a number beetween 1-3");
 
 
-
-            //    }
-            //    catch (Exception ex)
-            //    {
-
-            //    }
-
-
-            //    switch (choise)
-            //        {
-            //            case 1:
-            //                int numberToGuess = random.Next(1, 101);
-            //                int userGuess = 0;
-            //                int attempts = 0;
-
-
-            //                for (int i = 7; i > 0; i--)
-            //                {
-            //                    Console.WriteLine("Enter your guess. \nYou have: " + i + " Attempts");
-            //                    userGuess = int.Parse(Console.ReadLine());
-            //                    if (userGuess > numberToGuess)
-            //                    {
-            //                        Console.WriteLine("Too high");
-            //                        attempts++;
-            //                    }
-            //                    else if (userGuess < numberToGuess)
-            //                    {
-            //                        Console.WriteLine("Too low");
-            //                        attempts++;
-            //                    }
-            //                    else if (userGuess == numberToGuess)
-            //                    {
-            //                        Console.WriteLine($"Gratulations :D\nYour Guess: {userGuess}\nGuess number: {numberToGuess}\nAttempts: {attempts}");
-            //                        break;
-            //                    }
-            //                    else if (i == 0)
-            //                    {
-            //                        Console.WriteLine($"You did not guess the number. You lose\n Guess number: {numberToGuess}");
-            //                        break;
-            //                    }
-
-
-            //                }
-
-
-            //                guessHistory.Add(attempts);
-
-            //                Console.ReadKey();
-            //                break;
-
-            //            case 2:
-            //                foreach (var guess in guessHistory)
-            //                {
-            //                    Console.WriteLine("Attepts: " + guess + " ");
-            //                }
-            //                Console.ReadKey();
-            //                break;
-
-            //            case 3:
-            //                Console.WriteLine("Thanks for playing this game :)");
-            //                isGameRunning = false;
-            //                break;
-            //        }
-
-
-                
-               
-           // }
+            // }
 
 
 
@@ -407,9 +459,9 @@ namespace Day1
 
 
         }
-
+        }
 
             }
     
-    }
+    
     
